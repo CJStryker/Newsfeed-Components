@@ -40,6 +40,7 @@ function createMenuComponent() {
 createMenuComponent();
 
 // Chris' code
+// Not working
 
 /*function menuCreator(listItem) {
     const menu = document.createElement('div');
