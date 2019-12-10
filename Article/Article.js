@@ -85,8 +85,76 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+    },
+    {
+        title: `Roseann's birthday`,
+        date: 'Oct 13th, 2019',
+        firstParagraph: `Today is my mothers birthday! Hip hip hooray! Every mom deserves to feel appreciated and loved on her special day. From her boundless patience to her endless support, there are so many things to be grateful to your mom for. If you are struggling to find just the right way to convey the depth of your love and gratitude here are some ways to say happy birthday Mom to inspire you. Whether she is sweet, stern, kind, or crazy, hopefully, there is a message that resonates with you.`,
+
+        secondParagraph: `Happy birthday to the woman who helped to make all my dreams and aspirations possible, my darling mom. May your birthday be filled with delight this year.`,
+
+        thirdParagraph: `You deserve so much on your special day, and I am so sorry that you’ll just have to settle for lots of hugs and kisses instead. Happy birthday Mom, from your loving (but broke) daughter.`
+    },
+    {
+        title: `Lil C.J.'s birthday`,
+        date: 'Sept 1st, 2019',
+        firstParagraph: `A son is one of the sweetest gifts that life can bring, but it can be hard to figure out what to write him on his birthday. That’s why we’ve put together this list of 120 birthday wishes for your son. It’s important to show your son how much you value his presence in your life, and one of the best ways to do so is with a thoughtful birthday message. While there are many different ways to convey your feelings, the best messages have one thing in common, they show him just how much he means to you.`,
+
+        secondParagraph: `I hope that you always look ahead in life with a smile on your face and look back with fondness in your heart. I wish you endless joy in life on your birthday, and may it be filled with wonder and delight this year.`,
+
+        thirdParagraph: `I am grateful every day that you came into my world. Your smiles and laughter are a balm to my heart. You have brought nothing but happiness into my life. Happy birthday, son!`
+    },
+    {
+        title: 'Cumpleanos de Lil G',
+        date: 'August 17th, 2019',
+        firstParagraph: `Tener una hija es una de las mayores alegrias que puedes tener en la vida, pero saber exactamente que conseguirla para su cumpleanos puede ser increiblemente difícil. Al menos averiguar qué escribir para su mensaje de cumpleaños no tiene que ser tan dificil, porque tenemos 100 deseos de cumpleanos para las hijas!`,
+
+        secondParagraph: `Feliz cumpleanos a mi querida hija! Eres increiblemente preciosa para mi, y espero que te des cuenta de que eres mi todo. Que su cumpleanos este lleno de esplendor y amor.`,
+
+        thirdParagraph: `Eres una hija tan positiva, encantadora y absolutamente adorable. Estoy tan orgulloso de poder llamarte mi hija porque ninguna otra persona podría esperar compararte. Feliz cumpleanos a mi nina perfecta!`
+    },
 ];
+
+function articleCreator(title, date, p1, p2, p3) {
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const firstP = document.createElement('p');
+    const secondP = document.createElement('p');
+    const thirdP = document.createElement('p');
+    const expandButton = document.createElement('span');
+
+    article.classList.add('article');
+    articleTitle.classList.add('h2');
+    articleDate.classList.add('date');
+    expandButton.classList.add('expandButton');
+
+    articleTitle.textContent = title;
+    articleDate.textContent = date;
+    firstP.textContent = p1;
+    secondP.textContent = p2;
+    thirdP.textContent = p3;
+    expandButton.textContent = 'Click to see more';
+
+    expandButton.addEventListener('click', () => {
+        article.classList.toggle('article-open');
+    });
+
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(firstP);
+    article.appendChild(secondP);
+    article.appendChild(thirdP);
+    article.appendChild(expandButton);
+
+    return article;
+}
+
+const article = document.querySelector('.articles');
+
+data.forEach((d) => {
+    article.appendChild(articleCreator(d.title, d.date, d.firstParagraph, d.secondParagraph, d.thirdParagraph));
+});
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
