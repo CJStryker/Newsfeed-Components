@@ -105,7 +105,7 @@ const data = [
         thirdParagraph: `I am grateful every day that you came into my world. Your smiles and laughter are a balm to my heart. You have brought nothing but happiness into my life. Happy birthday, son!`
     },
     {
-        title: 'Cumpleanos de Lil D',
+        title: 'Cumpleanos de Lil G',
         date: 'August 17th, 2019',
         firstParagraph: `Tener una hija es una de las mayores alegrias que puedes tener en la vida, pero saber exactamente que conseguirla para su cumpleanos puede ser increiblemente difícil. Al menos averiguar qué escribir para su mensaje de cumpleaños no tiene que ser tan dificil, porque tenemos 100 deseos de cumpleanos para las hijas!`,
 
